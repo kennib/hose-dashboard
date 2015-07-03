@@ -1,0 +1,16 @@
+.loading-bar,
+.loading-progress {
+	height: 5px;
+}
+
+.loading-bar {
+	display: block;
+	width: 100%;
+}
+
+.imports .loading-progress {
+	fill: orangered;
+}
+.exports .loading-progress {
+	fill: #0A64A4;
+}

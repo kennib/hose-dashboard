@@ -1,0 +1,13 @@
+web:
+   extends:
+      file: common.yml
+      service: web
+   volumes:
+      - ..:/usr/src/app
+hose:
+   extends:
+      file: common.yml
+      service: hose
+   volumes:
+      - ../hose:/usr/src/app
+   net: host

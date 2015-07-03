@@ -1,0 +1,69 @@
+{
+	"hose": {
+		"address": "ws://localhost:8000"
+	},
+	"table": "freight",
+	"primaryField": "*",
+	"fields": [
+		{
+			"name": "*",
+			"label": "Declarations",
+			"type": "categorical"
+		},
+		{
+			"name": "value",
+			"label": "Value",
+			"type": "currency"
+		},
+		{
+			"name": "insurance",
+			"label": "Insurance",
+			"type": "number"
+		},
+		{
+			"name": "weight",
+			"label": "Weight",
+			"type": "mass"
+		},
+		{
+			"name": "origin_port",
+			"label": "Port of Origin",
+			"type": "categorical"
+		},
+        {
+            "name": "last_os_port",
+            "label": "Last Overseas Port",
+            "type": "categorical"
+        },
+		{
+			"name": "destination_port",
+			"label": "Port of Destination",
+			"type": "categorical"
+		},
+		{
+			"name": "arrival_date",
+			"label": "Arrival Date",
+			"type": "date"
+		},
+        {
+            "name": "vessel_name",
+            "label": "Vessel Name",
+            "type": "categorical"
+        },
+        {
+            "name": "container_type",
+            "label": "Container Type",
+            "type": "categorical"
+        },
+        {
+            "name": "container_length",
+            "label": "Container Length",
+            "type": "categorical"
+        },
+        {
+            "name": "tariff_class",
+            "label": "Tariff Class",
+            "type": "categorical"
+        }
+	]
+}

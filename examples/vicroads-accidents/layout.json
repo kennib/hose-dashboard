@@ -1,0 +1,75 @@
+{
+	"type": "rows",
+	"contents": [
+		{
+			"type": "selection"
+		},
+		{
+			"type": "columns",
+			"size": 1,
+			"contents": [
+				{
+					"type": "chart",
+					"chartType": "counter",
+					"fields": {
+						"count": {
+							"field": "accident_no",
+							"aggregate": "count"
+						}
+					}
+				}
+			]
+		},
+		{
+			"type": "columns",
+			"size": 3,
+			"contents": [
+				{
+					"type": "chart",
+					"chartType": "pie",
+					"fields": {
+						"size": {
+							"field": "no_persons_killed",
+							"aggregate": "sum"
+						},
+						"group": "speed_zone"
+					}
+				},
+				{
+					"type": "chart",
+					"chartType": "pie",
+					"fields": {
+						"size": {
+							"field": "no_persons_inj_2",
+							"aggregate": "sum"
+						},
+						"group": "speed_zone"
+					}
+				},
+				{
+					"type": "chart",
+					"chartType": "pie",
+					"fields": {
+						"size": {
+							"field": "no_persons_inj_3",
+							"aggregate": "sum"
+						},
+						"group": "speed_zone"
+					}
+				}
+			]
+		},
+		{
+			"type": "chart",
+			"chartType": "bar",
+			"size": 2,
+			"fields": {
+				"group": "day_of_week",
+				"size": {
+					"field": "no_persons_killed",
+					"aggregate": "avg"
+				}
+			}
+		}
+	]
+}

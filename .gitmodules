@@ -1,0 +1,3 @@
+[submodule "hose"]
+	path = hose
+	url = git@github.inside.nicta.com.au:kbawden/hose.git

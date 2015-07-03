@@ -1,0 +1,156 @@
+body, html {
+	height: 100%;
+	margin: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+	overflow: hidden;
+	text-align: center;
+}
+
+html, input, select, button, .c3 text {
+	font-family: 'Hind', sans-serif;
+}
+
+body > .rows, body > .columns {
+	height: 100%;
+	margin: 0;
+}
+
+.root.showLayout .columns,
+.root.showLayout .rows,
+.root.showLayout .chart,
+.root.showLayout .selection {
+	background: rgba(0, 0, 0, 0.05);
+	transition: background-color 0.3s linear;
+}
+
+.columns, .rows, .chart, .selection {
+	position: relative;
+	flex-basis: 0;
+	margin: 6px;
+	transition: background-color 2s linear;
+}
+
+.rows > * {
+	margin-left: 0;
+	margin-right: 0;
+}
+.rows > *:first-child {
+	margin-top: 0;
+}
+.rows > *:last-child {
+	margin-bottom: 0;
+}
+
+.columns > * {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.columns > *:first-child {
+	margin-left: 0;
+}
+.columns > *:last-child {
+	margin-right: 0;
+}
+
+.columns {
+	display: flex;
+	flex-direction: row;
+}
+
+.rows {
+	display: flex;
+	flex-direction: column;
+}
+
+.chart {
+	display: flex;
+	flex-direction: column;
+}
+
+.chart label {
+	font-weight: bold;
+	font-size: 14pt;
+}
+
+.chart .chart-main {
+	flex: 2;
+}
+
+.leaf:hover .buttons {
+	display: block;
+}
+
+.buttons {
+	display: none;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	z-index: 10;
+}
+
+.buttons button {
+	background: #f0f8ff;
+	border: none;
+	border: 1px solid black;
+	border-radius: 3px;
+	margin: 2px;
+	padding: 5px;
+}
+
+.buttons button:hover {
+	border: 1px solid orangered;
+	color: orangered;
+	cursor: pointer;
+}
+
+.selection {
+	display: flex;
+	justify-content: center;
+}
+
+.selection ul {
+	display: inline;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.selection ul li {
+	display: inline-block;
+	padding: 0.5em;
+	margin: 0.5em;
+	background-color: orangered;
+	color: white;
+}
+
+.selection ul li .remove {
+	margin-left: 0.5em;
+	cursor: pointer;
+}
+
+.selection .label {
+	padding: 0.5em;
+	margin: 0.5em;
+}
+
+.loading-progress {
+	fill: orangered;
+}
+
+.simple-modal-body {
+	min-width: 1024px !important;
+	margin-left: -512px !important;
+}
+
+.counter-chart p {
+	display: inline-block;
+}
+
+.counter-chart h3 {
+	display: inline-block;
+	margin-right: 0.5em;
+}

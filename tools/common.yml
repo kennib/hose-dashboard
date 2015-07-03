@@ -1,0 +1,8 @@
+web:
+   build: ..
+   ports:
+      - "9966:9966"
+hose:
+   build: ../hose
+   ports:
+      - "8000:8000"

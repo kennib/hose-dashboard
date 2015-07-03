@@ -1,0 +1,100 @@
+{
+	"type": "rows",
+	"contents": [
+		{
+			"type": "selection"
+		},
+		{
+			"type": "columns",
+			"size": 0.5,
+			"contents": [
+				{
+					"type": "chart",
+					"chartType": "counter",
+					"fields": {
+						"count": {
+							"field": "*",
+							"aggregate": "count"
+						}
+					}
+				},
+				{
+					"type": "chart",
+					"chartType": "counter",
+					"fields": {
+						"count": {
+							"field": "value",
+							"aggregate": "sum"
+						}
+					}
+				},
+				{
+					"type": "chart",
+					"chartType": "counter",
+					"fields": {
+						"count": {
+							"field": "weight",
+							"aggregate": "sum"
+						}
+					}
+				}
+			]
+		},
+		{
+			"type": "columns",
+			"size": 3,
+			"contents": [
+				{
+					"type": "chart",
+					"chartType": "scatter",
+					"size": 2,
+					"fields": {
+						"x": "weight",
+						"y": "value"
+					}
+				},
+				{
+					"type": "rows",
+					"contents": [
+						{
+							"type": "chart",
+							"label": "Value by Origin",
+							"chartType": "pie",
+							"fields": {
+								"size": {
+									"field": "value",
+									"aggregate": "sum"
+								},
+								"group": "origin_port"
+							}
+						},
+						{
+							"type": "chart",
+							"label": "Value by Destination",
+							"chartType": "pie",
+							"fields": {
+								"size": {
+									"field": "value",
+									"aggregate": "sum"
+								},
+								"group": "destination_port"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "chart",
+			"chartType": "timeline",
+			"size": 1,
+			"fields": {
+				"date": "arrival_date",
+				"size": {
+					"field": "value",
+					"aggregate": "sum"
+				}
+			}
+		}
+	]
+}

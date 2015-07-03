@@ -1,0 +1,44 @@
+{
+	"hose": {
+		"address": "ws://localhost:8001"
+	},
+	"table": "accidents",
+	"primaryField": "accident_no",
+	"fields": [
+		{
+			"name": "accident_no",
+			"label": "Accidents",
+			"type": "ordinal"
+		},
+		{
+			"name": "no_persons_killed",
+			"label": "Deaths",
+			"type": "number"
+		},
+		{
+			"name": "no_persons_inj_2",
+			"label": "Severe Injuries",
+			"type": "number"
+		},
+		{
+			"name": "no_persons_inj_3",
+			"label": "Minor Injuries",
+			"type": "number"
+		},
+		{
+			"name": "speed_zone",
+			"label": "Speed Zone",
+			"type": "number"
+		},
+		{
+			"name": "day_of_week",
+			"label": "Day of the Week",
+			"type": "number"
+		},
+		{
+			"name": "accidentdate",
+			"label": "Accident Date",
+			"type": "date"
+		}
+	]
+}
