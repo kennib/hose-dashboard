@@ -1,0 +1,19 @@
+{
+	"hose": {
+		"address": "ws://103.43.75.24:8000"
+	},
+	"table": "govhack.test",
+	"primaryField": "name",
+	"fields": [
+		{
+			"name": "name",
+			"label": "Name",
+			"type": "ordinal"
+		},
+		{
+			"name": "cookies",
+			"label": "Cookies",
+			"type": "number"
+		}
+	]
+}

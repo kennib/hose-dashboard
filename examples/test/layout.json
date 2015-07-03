@@ -1,0 +1,12 @@
+{
+	"type": "rows",
+	"contents": [
+		{
+			"type": "selection"
+		},
+		{
+			"type": "columns",
+			"contents": []
+		}
+	]
+}
