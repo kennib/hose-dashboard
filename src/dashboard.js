@@ -8,33 +8,41 @@ var Hose = require('hose-client').Hose;
 var hoseCharts = require('hose-charts');
 var formatters = require('./formatters.js');
 
-function Dashboard(selector, modelUrl, layoutUrl) {
-	if (modelUrl && layoutUrl) {
+function Dashboard(selector, ckan, dataset) {
+	var apiUrl = ckan + '/api/action/datastore_search';
+	var model = {
+		hose: {
+			address: "ws://localhost:8000"
+		},
+		table: '"'+dataset+'"',
+	};
+	var layout = {
+		type: 'rows',
+		contents: [{
+			type: 'selection',
+		}, {
+			type: 'columns',
+			contents: []
+		}],
+	};
+	
+	if (dataset) {
 		return queue()
-			.defer(d3.json, modelUrl)
-			.defer(d3.json, layoutUrl)
-			.await(function(error, model, layout) {
+			.defer(d3.json, apiUrl+'?limit=0&resource_id='+dataset)
+			.await(function(error, response) {
 				if (error) {
 					throw error;
 				}
-				createDashboard(selector, model, layout);
-			});
-	} else {
-		return queue()
-			.defer(d3.json, 'examples/hello-dashboard/model.json')
-			.await(function(error, model) {
-				if (error) {
-					throw error;
-				}
-				createDashboard(selector, model, {
-					type: 'rows',
-					contents: [{
-						type: 'selection',
-					}, {
-						type: 'columns',
-						contents: []
-					}],
+				model.fields = response.result.fields.map(function(field) {
+					return {
+						name: '"'+field.id+'"',
+						label: _.capitalize(field.id),
+						type: field.type == 'numeric' ? 'number' : 'categorical',
+					};
 				});
+				model.primaryField = model.fields[0].name;
+console.log(model, layout);
+				createDashboard(selector, model, layout);
 			});
 	}
 }

@@ -5,11 +5,9 @@ var url = window.location.hash.substr(1);
 
 // Either we are given a dashboard to view
 if (url && url.length) {
-    var modelUrl = url + '/model.json'
-    var layoutUrl = url + '/layout.json'
-    Dashboard('body', modelUrl, layoutUrl);
+    Dashboard('body', 'http://data.gov.au', url);
 } else {
-    Dashboard('body');
+    Dashboard('body', 'http://data.gov.au', '7fbac314-4bf9-4601-b812-0307316ef5a4');
 }
 
 // Usually changing the hash doesn't refresh the page, which makes switching
