@@ -1,0 +1,39 @@
+{
+	"hose": {
+		"address": "ws://localhost:8000"
+	},
+	"table": "\"7659d765-dec3-4ead-bbd1-ece6101891a5\"",
+	"primaryField": "\"dataset id\"",
+	"fields": [
+      {
+        "type": "categorical",
+	"label": "ID",
+        "name": "_id"
+      },
+      {
+        "type": "number",
+	"label": "Title",
+        "name": "_full_text"
+      },
+      {
+        "type": "categorical",
+	"label": "Dataset",
+        "name": "\"dataset id\""
+      },
+      {
+        "type": "categorical",
+	"label": "Dataset Name",
+        "name": "\"dataset name\""
+      },
+      {
+        "type": "number",
+	"label": "Total Views",
+        "name": "\"total views\""
+      },
+      {
+        "type": "number",
+	"label": "Recent Views",
+        "name": "\"recent views (last 2 weeks)\""
+      }
+    ]
+}
